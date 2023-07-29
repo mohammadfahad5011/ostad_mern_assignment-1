@@ -1,0 +1,157 @@
+<script>
+  // --------------------============= problem-1 ==============--------------------------------
+
+  // 1) Topic: Online Store Discount Calculator (If-Else Statement)
+
+  /* If the total purchase amount is less than $50, no discount is applied.
+
+  If the total purchase amount is between $50 and $100 (both inclusive), apply a 5% discount.
+
+  If the total purchase amount is between $100 and $200 (both inclusive), apply a 10% discount.
+
+  If the total purchase amount is $200 or more, apply a 15% discount.
+
+
+  Tasks:
+
+  Implement the JavaScript function to calculate the discounted amount based on the input.
+
+
+  Display / console.log the “discounted amount & total amount + discount amount “ */
+
+  //===================************* sovle-1 **********=========================
+
+  function calculateDiscountedAmount(totalAmount) {
+    let discountPercent = 0;
+    let discountedAmount = 0;
+
+    if (totalAmount >= 200) {
+      discountPercent = 0.15;
+    } else if (totalAmount >= 100) {
+      discountPercent = 0.1;
+    } else if (totalAmount >= 50) {
+      discountPercent = 0.05;
+    }
+
+    discountedAmount = totalAmount - totalAmount * discountPercent;
+
+    document.write(` <h1>Online Store Discount Calculator </h1>  `);
+
+    document.write(`Total amount: $${totalAmount.toFixed(2)} <br>`);
+    document.write(`Discounted amount: $${discountedAmount.toFixed(2)} <br>`);
+    document.write(
+      `Discount amount: $${(totalAmount * discountPercent).toFixed(2)} <br> `
+    );
+
+    return discountedAmount;
+  }
+
+  calculateDiscountedAmount(20);
+
+  // --------------------============= problem-2 ==============--------------------------------
+
+  //   2) Topic: Filter Even Numbers
+
+  // Description:
+
+  /* In this assignment, you will create a JavaScript program that filters even numbers from a given array and displays the filtered numbers on the webpage. */
+
+  // Output is:-
+
+  // Original Array: [12, 34, 45, 23, 6, 78, 54, 90]
+
+  // Filtered Even Numbers: [12, 34, 6, 78, 54, 90]
+
+  // Tasks:
+
+  /* Implement a JavaScript function to filter even numbers from the array.
+  Display /console.log the filtered even numbers on the code. */
+
+  //===================************* sovle-2 **********=========================
+
+  const filterEvenNumbers = (originalArray) => {
+    let values = [...originalArray];
+
+    let evenNumbers = values.filter((num) => {
+      return num % 2 == 0;
+    });
+
+    document.write(` <h1>Filter Even Numbers </h1>  `);
+
+    document.write(`Original Array:   ${values} <br> `);
+    document.write(`Filtered Even Numbers:   ${evenNumbers} <br> `);
+  };
+
+  let originalArray = [12, 34, 45, 23, 6, 78, 54, 90];
+
+  filterEvenNumbers(originalArray);
+
+  // --------------------============= problem-3 ==============--------------------------------
+
+  // 3) Topic: Multiplication Table Generator
+
+  // Description:
+
+  /* In this assignment, you will create a JavaScript program that generates a multiplication table for a given number. The program will take input from the user, calculate the multiplication table, and display it on the console. */
+
+  // Tasks:
+
+  /* Implement a JavaScript function to calculate the multiplication table using a for loop.
+
+  Display the generated multiplication table on the console. */
+
+  //===================************* sovle-3 **********=========================
+
+  const multiplicationTableGenerator = (number) => {
+    document.write(` <h1> Multiplication Table Generator </h1> `);
+
+    for (let i = 1; i <= 10; i++) {
+      document.write(` ${i} x ${number} = ${i * number} <br>`);
+    }
+  };
+
+  multiplicationTableGenerator(5);
+
+  // --------------------============= problem-4 ==============--------------------------------
+
+  //   4) Topic: Grade Calculator (JavaScript Switch Case)
+
+  /* Create a function called "calculateGrade" that takes a student's score as input and returns the corresponding grade using the following scale: */
+
+  // 90 or above: 'A'
+
+  // 80 to 89: 'B'
+
+  // 70 to 79: 'C'
+
+  // 60 to 69: 'D'
+
+  // Below 60: 'F'
+
+  //===================************* sovle-3 **********=========================
+
+  const gradeCalculator = (number) => {
+    document.write(`<h1>Grade Calculator</h1>`);
+
+    function calculateGrade(score) {
+      switch (true) {
+        case score >= 90:
+          return "A";
+        case score >= 80:
+          return "B";
+        case score >= 70:
+          return "C";
+        case score >= 60:
+          return "D";
+        default:
+          return "F";
+      }
+    }
+
+    const score1 = number;
+    const grade1 = calculateGrade(score1);
+    document.write(`The grade for ${score1} is: ${grade1}`);
+  };
+
+  gradeCalculator(65);
+</script>
